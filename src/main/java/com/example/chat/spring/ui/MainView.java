@@ -41,7 +41,7 @@ public class MainView extends VerticalLayout implements StompSessionHandler {
         WebSocketClient transport = new SockJsClient(transports);
         WebSocketStompClient stompClient = new WebSocketStompClient(transport);
         stompClient.setMessageConverter(new MappingJackson2MessageConverter());
-        stompClient.connect("ws://localhost:8080/vaadin-chat/chat", this);
+        stompClient.connect("ws://vaadin-chat-server.herokuapp.com/chat", this);
     }
 
     private void addText(String text) {
